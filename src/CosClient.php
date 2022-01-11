@@ -6,12 +6,12 @@ use Qcloud\Cos\Client;
 
 class CosClient
 {
-    protected string $secretId;
-    protected string $secretKey;
+    protected string $secret_id;
+    protected string $secret_key;
     protected string $region;
 
     // 对象键
-    protected string $appId;
+    protected string $app_id;
 
     // 存储桶名称 格式：BucketName-APPID
     protected string $bucket;
@@ -34,28 +34,28 @@ class CosClient
      */
     public function getClient(): Client
     {
-        $secretId = $this->secretId;
-        $secretKey = $this->secretKey;
+        $secret_id = $this->secret_id;
+        $secret_key = $this->secret_key;
         $region = $this->region;
 
         return new Client([
             'region' => $region,
             'schema' => $this->schema,
             'credentials' => [
-                'secretId' => $secretId,
-                'secretKey' => $secretKey]]);
+                'secretId' => $secret_id,
+                'secretKey' => $secret_key]]);
     }
 
     public function putObject($file)
     {
         try {
             $bucket = $this->bucket;
-            $key = $this->appId;
+            $appId = $this->app_id;
 
             if ($file) {
                 $result = $this->getClient()->putObject([
                     'Bucket' => $bucket,
-                    'Key' => $key,
+                    'Key' => $appId,
                     'Body' => $file]);
                 print_r($result);
             }
