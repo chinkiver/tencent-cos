@@ -1,0 +1,17 @@
+{
+    "name": "chinkiver\/tencent-cos",
+    "description": "Laravel 腾讯云 COS",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "chenyong",
+            "email": "chinkiver@163.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Chinkiver\\TencentCos\\": "src"
+        }
+    }
+}
