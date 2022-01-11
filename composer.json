@@ -8,7 +8,9 @@
             "email": "chinkiver@163.com"
         }
     ],
-    "require": {},
+    "require": {
+        "qcloud/cos-sdk-v5": "^2.5"
+    },
     "autoload": {
         "psr-4": {
             "Chinkiver\\TencentCos\\": "src"
